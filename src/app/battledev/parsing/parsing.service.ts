@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ParsingService {
   inputString: string[];
+  calcString: string[][];
 
   constructor() {
   }
@@ -20,7 +21,7 @@ export class ParsingService {
   }
 
   transformInDoubleTab(): void {
-
+    this.calcString = this.inputString.map(line => line.split(' '));
   }
 
   transformInTwoTablesAndConvertSecond(): void {
