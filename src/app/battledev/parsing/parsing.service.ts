@@ -3,7 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ParseServiceService {
+export class ParsingService {
+
 
   constructor() { }
+
+  removeFirst(): void {
+
+  }
 }
