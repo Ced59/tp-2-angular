@@ -30,4 +30,8 @@ export class ParsingService {
     this.reducedTabOne = this.calcString.map(line => line[0]);
     this.reducedTabTwo = this.calcString.map(line => parseInt(line[1],10));
   }
+
+  getCalcString(): string[][]{
+    return this.calcString;
+  }
 }
