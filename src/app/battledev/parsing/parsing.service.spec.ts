@@ -77,11 +77,36 @@ describe('When formatting inputs', () => {
     ];
 
     // Act
-    parsingService.secondString = parsingService.getSecondString();
+    const secondString = parsingService.getSecondString();
 
     // Assert
-    expect(parsingService.secondString).toEqual(expectedString);
+    expect(secondString).toEqual(expectedString);
     expect(parsingService.inputString).toEqual(expectedInputString);
 
   });
+
+  it('should transform inputString in double tab', () => {
+    parsingService.inputString = [
+      'armoire 16',
+      'armoire 38',
+      'armoire 83',
+      'four 82'
+    ];
+
+    const expectedInputString = [
+      ['armoire' , '16'],
+      ['armoire' , '38'],
+      ['armoire' , '83'],
+      ['four' , '82'],
+    ];
+
+    // Act
+    parsingService.transformInDoubleTab();
+
+    // Assert
+    expect(parsingService.calcString).toEqual(expectedInputString);
+
+  });
+
+ 
 });

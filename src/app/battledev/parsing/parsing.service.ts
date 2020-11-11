@@ -11,7 +11,12 @@ export class ParsingService {
 
   }
 
-  getSecondString(): void {
+  getSecondString(): string {
+
+    return '';
+  }
+
+  transformInDoubleTab(): void {
 
   }
 }
