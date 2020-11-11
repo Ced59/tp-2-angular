@@ -12,11 +12,6 @@ describe('Exercice2Service', () => {
   let parsingService: ParsingService;
 
   beforeEach(() => {
-
-  });
-
-  it('should return tab with good product', () => {
-    // Arrange
     mockParsingService = mock(ParsingService);
     when(mockParsingService.getCalcString()).thenReturn([
       ['armoire' , '16'],
@@ -31,7 +26,10 @@ describe('Exercice2Service', () => {
     ]);
     parsingService = instance(mockParsingService);
     exercice2Service = new Exercice2Service(parsingService);
+  });
 
+  it('should return tab with good product', () => {
+    // Arrange
     exercice2Service.key = 'armoire';
 
     const expectedTab = [
@@ -45,5 +43,17 @@ describe('Exercice2Service', () => {
 
     // Assert
     expect(cleanTab).toEqual(expectedTab);
+  });
+
+  it('should return the low cost price', () => {
+    // Arrange
+    const expectedResult = 16;
+    const cleanedTab = [83, 16, 83, 82];
+
+    // Act
+    const lowerPrice = exercice2Service.getLowerPrice(cleanedTab);
+
+    // Assert
+    expect(lowerPrice).toEqual(expectedResult);
   });
 });

@@ -24,4 +24,10 @@ export class Exercice2Service {
   cleanTabByKey(): string[][] {
     return this.parsingService.getCalcString().filter(x => x[0] === this.key);
   }
+
+  getLowerPrice(cleanedTab: number[]): number
+  {
+    cleanedTab.sort();
+    return cleanedTab[0];
+  }
 }

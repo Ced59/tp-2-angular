@@ -34,4 +34,8 @@ export class ParsingService {
   getCalcString(): string[][]{
     return this.calcString;
   }
+
+  getReduceTableTwo(): number[]{
+    return this.reducedTabTwo;
+  }
 }
