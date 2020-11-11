@@ -19,4 +19,8 @@ export class ParsingService {
   transformInDoubleTab(): void {
 
   }
+
+  transformInTwoTablesAndConvertSecond(): void {
+
+  }
 }

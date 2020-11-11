@@ -108,5 +108,33 @@ describe('When formatting inputs', () => {
 
   });
 
- 
+  it('should convert second tab in number', () => {
+    parsingService.calcString = [
+      ['armoire' , '16'],
+      ['armoire' , '38'],
+      ['armoire' , '83'],
+      ['four' , '82'],
+    ];
+
+    const expectedTabOne = [
+      'armoire',
+      'armoire',
+      'armoire',
+      'four'
+    ];
+
+    const expectedTabTwo = [
+      16,
+      38,
+      83,
+      82
+    ];
+
+    // Act
+    parsingService.transformInTwoTablesAndConvertSecond();
+
+    // Assert
+    expect(parsingService.reducedTabOne).toEqual(expectedTabOne);
+    expect(parsingService.reducedTabTwo).toEqual(expectedTabTwo);
+  });
 });
