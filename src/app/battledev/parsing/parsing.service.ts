@@ -13,9 +13,10 @@ export class ParsingService {
       this.inputString.shift();
   }
 
-  getSecondString(): string {
-
-    return '';
+  getSecondStringAndRemoveFirst(): string {
+    const result = this.inputString[0];
+    this.removeFirst();
+    return result;
   }
 
   transformInDoubleTab(): void {

@@ -77,7 +77,7 @@ describe('When formatting inputs', () => {
     ];
 
     // Act
-    const secondString = parsingService.getSecondString();
+    const secondString = parsingService.getSecondStringAndRemoveFirst();
 
     // Assert
     expect(secondString).toEqual(expectedString);
