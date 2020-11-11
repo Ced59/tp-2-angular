@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class Exercice2Service {
 
   constructor() { }
+
+  cleanTabByKey(): string[][] {
+
+    return [];
+  }
 }

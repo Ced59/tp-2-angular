@@ -97,7 +97,7 @@ describe('When formatting inputs', () => {
       ['armoire' , '16'],
       ['armoire' , '38'],
       ['armoire' , '83'],
-      ['four' , '82'],
+      ['four' , '82']
     ];
 
     // Act
@@ -113,7 +113,7 @@ describe('When formatting inputs', () => {
       ['armoire' , '16'],
       ['armoire' , '38'],
       ['armoire' , '83'],
-      ['four' , '82'],
+      ['four' , '82']
     ];
 
     const expectedTabOne = [
