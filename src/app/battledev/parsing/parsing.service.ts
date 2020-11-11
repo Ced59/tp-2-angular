@@ -4,11 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ParsingService {
+  inputString: string[];
 
-  constructor() { }
+  constructor() {
+  }
 
   removeFirst(): void {
-
+      this.inputString.shift();
   }
 
   getSecondString(): string {
