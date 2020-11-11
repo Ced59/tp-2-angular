@@ -5,10 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class ParsingService {
 
-
   constructor() { }
 
   removeFirst(): void {
+
+  }
+
+  getSecondString(): void {
 
   }
 }
