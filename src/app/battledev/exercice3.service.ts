@@ -21,4 +21,12 @@ export class Exercice3Service {
             parseInt(line[2], 10)) / line.length)));
     return Math.max(...tabAverages);
   }
+
+  getResult(input: string[]): number {
+    this.parsingService.inputString = input;
+    this.parsingService.removeFirst();
+    this.parsingService.transformInDoubleTab();
+    const tabResult = this.parsingService.getCalcString();
+    return this.getGoodAverage(tabResult);
+  }
 }
