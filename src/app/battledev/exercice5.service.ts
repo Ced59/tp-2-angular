@@ -24,4 +24,20 @@ export class Exercice5Service {
   isDivBy100(year: number): boolean {
     return false;
   }
+
+  isDivBy100not100(year: number): boolean {
+    return false;
+  }
+
+  isBissextile(year: number): boolean {
+    return false;
+  }
+
+  getSingleResult(bissextile: boolean): string {
+    return '';
+  }
+
+  getTabResult(input: number[]): string[] {
+    return [];
+  }
 }
