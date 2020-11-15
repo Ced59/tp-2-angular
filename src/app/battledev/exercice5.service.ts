@@ -50,4 +50,11 @@ export class Exercice5Service {
   getTabResult(input: number[]): string[] {
     return input.map(line => this.getSingleResult(line));
   }
+
+  getResult(input: string[]): string[] {
+    this.parsingService.inputString = input;
+    this.parsingService.removeFirst();
+    const tabNumber = this.parsingService.inputString.map(line => parseInt(line, 10));
+    return this.getTabResult(tabNumber);
+  }
 }

@@ -170,4 +170,30 @@ describe('Exercice5Service', () => {
 
     expect(result).toEqual(expectedValue);
   });
+
+  it('should be return good results INTEGRATION TEST', () => {
+    const input = [
+      '5',
+      '2000',
+      '1680',
+      '1919',
+      '2012',
+      '2015',
+    ];
+
+    const expectedValue = [
+      'BISSEXTILE',
+      'BISSEXTILE',
+      'NON BISSEXTILE',
+      'BISSEXTILE',
+      'NON BISSEXTILE'
+    ];
+
+    const parsingServiceIntegration = new ParsingService();
+    const exercice5Integration = new Exercice5Service(parsingServiceIntegration);
+
+    const result = exercice5Integration.getResult(input);
+
+    expect(result).toEqual(expectedValue);
+  });
 });
