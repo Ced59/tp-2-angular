@@ -108,6 +108,24 @@ describe('When formatting inputs', () => {
 
   });
 
+  it('should transform multi input in double tab', () => {
+    parsingService.inputString = [
+      '5 9 7',
+      '10 17 7'
+    ];
+
+    const expectedInputString = [
+      ['5', '9', '7'],
+      ['10', '17', '7']
+    ];
+
+    // Act
+    parsingService.transformInDoubleTab();
+
+    // Assert
+    expect(parsingService.calcString).toEqual(expectedInputString);
+  });
+
   it('should convert second tab in number', () => {
     const cleanedTab = [
       ['armoire' , '16'],
