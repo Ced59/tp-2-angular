@@ -97,7 +97,7 @@ describe('When formatting inputs', () => {
       ['armoire' , '16'],
       ['armoire' , '38'],
       ['armoire' , '83'],
-      ['four' , '82'],
+      ['four' , '82']
     ];
 
     // Act
@@ -109,11 +109,11 @@ describe('When formatting inputs', () => {
   });
 
   it('should convert second tab in number', () => {
-    parsingService.calcString = [
+    const cleanedTab = [
       ['armoire' , '16'],
       ['armoire' , '38'],
       ['armoire' , '83'],
-      ['four' , '82'],
+      ['four' , '82']
     ];
 
     const expectedTabOne = [
@@ -131,10 +131,39 @@ describe('When formatting inputs', () => {
     ];
 
     // Act
-    parsingService.transformInTwoTablesAndConvertSecond();
+    parsingService.transformInTwoTablesAndConvertSecond(cleanedTab);
 
     // Assert
     expect(parsingService.reducedTabOne).toEqual(expectedTabOne);
     expect(parsingService.reducedTabTwo).toEqual(expectedTabTwo);
+  });
+
+  it('should return second value', () => {
+    parsingService.inputString = [
+      '17',
+      'armoire',
+      'armoire 16',
+      'armoire 38',
+      'armoire 83',
+      'four 82',
+      'armoire 85',
+      'armoire 17',
+      'tv 41',
+      'armoire 91',
+      'armoire 92',
+      'four 5',
+      'tv 67',
+      'four 69',
+      'armoire 48',
+      'four 46',
+      'tv 65',
+      'armoire 93',
+      'tv 95'
+    ];
+    const expectedValue = 'armoire';
+
+    const secondString = parsingService.exercice2ReturnProduct();
+
+    expect(secondString).toEqual(expectedValue);
   });
 });
