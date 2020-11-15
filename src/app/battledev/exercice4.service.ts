@@ -14,7 +14,24 @@ export class Exercice4Service {
   }
 
   getPriceByTable(nbPersonInTable: number, priceByPerson: number): number {
-
-    return 0;
+    const totalWithoutPromo = nbPersonInTable * priceByPerson;
+    let totalWithPromo: number;
+    if (nbPersonInTable < 4)
+    {
+      totalWithPromo = totalWithoutPromo;
+    }
+    else if (nbPersonInTable < 6)
+    {
+      totalWithPromo = totalWithoutPromo - (totalWithoutPromo * .1);
+    }
+    else if (nbPersonInTable < 10)
+    {
+      totalWithPromo = totalWithoutPromo - (totalWithoutPromo * .2);
+    }
+    else
+    {
+      totalWithPromo = totalWithoutPromo - (totalWithoutPromo * .3);
+    }
+    return totalWithPromo;
   }
 }
