@@ -13,7 +13,12 @@ export class Exercice3Service {
     this.inputString = [];
   }
 
-  getGoodAverage(): number {
-    return 0;
+  getGoodAverage(inputValue: string[][]): number {
+    const tabAverages = inputValue.map(line => (
+      Math.ceil(
+        (parseInt(line[0], 10) +
+            parseInt(line[1], 10) +
+            parseInt(line[2], 10)) / line.length)));
+    return Math.max(...tabAverages);
   }
 }

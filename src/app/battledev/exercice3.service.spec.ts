@@ -22,12 +22,17 @@ describe('Exercice3Service', () => {
   it('should be return higher average', () => {
     // Arrange
     const expectedResult = 12;
+    const inputValue = [
+      ['5', '9', '7'],
+      ['10', '17', '7']
+    ];
 
     // Act
-    const result = exercice3Service.getGoodAverage();
+    const result = exercice3Service.getGoodAverage(inputValue);
 
     // Assert
     expect(result).toEqual(expectedResult);
 
   });
+
 });
