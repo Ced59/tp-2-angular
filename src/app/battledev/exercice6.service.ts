@@ -12,4 +12,24 @@ export class Exercice6Service {
     this.parsingService = parsingService;
     this.inputString = [];
   }
+
+  isLetter(input: string): boolean {
+    return false;
+  }
+
+  isNumber(input: string): boolean {
+    return false;
+  }
+
+  hasSixChar(input: string): boolean {
+    return false;
+  }
+
+  passIsCorrect(input: string): boolean {
+    return false;
+  }
+
+  getNbCorrectPassword(input: string[]): number {
+    return 0;
+  }
 }
