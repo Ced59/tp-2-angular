@@ -261,4 +261,73 @@ describe('Exercice6Service', () => {
 
     expect(result).toEqual(expectedValue);
   });
+
+  it('should return number of correct passwords INTEGRATION TEST', () => {
+    const input = [
+      '56',
+      'FC4BOTO',
+      'L7EWVR',
+      '853504',
+      'P4SSBL',
+      'W9SQDP',
+      'V2#XUR',
+      'I1JNZB',
+      'BUSLHT',
+      'Z7EOMF',
+      '.2DQWHC',
+      'P4BJF6',
+      'SI?CEB',
+      'E86PEKL',
+      '#5.KVX',
+      'RY3KCNZ',
+      'P5GVF',
+      'Y01.EGC',
+      'B86FHA',
+      'D7.OOU',
+      'CK0NMQJ',
+      '?0PUH',
+      'L7MJ.S',
+      'L95?DW',
+      '0HQ.V',
+      'C68MUIZ',
+      'ISZKEQ',
+      'S5JBZG',
+      'T2FGHI',
+      '0HPQE',
+      'I6XDDP',
+      'L0XAZFF',
+      'N8WWYS',
+      '?5.EV',
+      'ENVMAJ',
+      'R3ALM',
+      'D9YDVZ',
+      'A9CNU8',
+      'G5NGC3',
+      'KXPYQ?',
+      'Y8QEZ?',
+      'R0ZMES',
+      'I1PKRH',
+      '288608',
+      'B4URHH',
+      'Q1EDIB',
+      'D8B?IGR',
+      'RKE#?L',
+      'E8FYZC',
+      '8IWNQ',
+      'B06FF?G',
+      '2YIID',
+      'O.VZBT',
+      'Z4YUS',
+      'T5VQZO',
+      'A4QCD7',
+      'H0?P.HX'
+    ];
+    const expectedValue = 16;
+    const parsingServiceIntegration = new ParsingService();
+    const exercice6Integration = new Exercice6Service(parsingServiceIntegration);
+
+    const result = exercice6Integration.getResult(input);
+
+    expect(result).toEqual(expectedValue);
+  });
 });
