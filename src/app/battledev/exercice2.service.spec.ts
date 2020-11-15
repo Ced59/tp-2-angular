@@ -56,4 +56,40 @@ describe('Exercice2Service', () => {
     // Assert
     expect(lowerPrice).toEqual(expectedResult);
   });
+
+  it('should getResult return low price INTEGRATION TEST', () => {
+    // Arrange
+    const input = [
+      '17',
+      'armoire',
+      'armoire 16',
+      'armoire 38',
+      'armoire 83',
+      'four 82',
+      'armoire 85',
+      'armoire 17',
+      'tv 41',
+      'armoire 91',
+      'armoire 92',
+      'four 5',
+      'tv 67',
+      'four 69',
+      'armoire 48',
+      'four 46',
+      'tv 65',
+      'armoire 93',
+      'tv 95'
+    ];
+    const expectedPrice = 16;
+
+    const parsingServiceIntegration = new ParsingService();
+    const exercice2Integration = new Exercice2Service(parsingServiceIntegration);
+
+    // Act
+
+    const result = exercice2Integration.getResult(input);
+
+    // Assert
+    expect(result).toEqual(expectedPrice);
+  });
 });

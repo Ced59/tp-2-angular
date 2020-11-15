@@ -26,9 +26,9 @@ export class ParsingService {
     this.calcString = this.inputString.map(line => line.split(' '));
   }
 
-  transformInTwoTablesAndConvertSecond(): void {
-    this.reducedTabOne = this.calcString.map(line => line[0]);
-    this.reducedTabTwo = this.calcString.map(line => parseInt(line[1],10));
+  transformInTwoTablesAndConvertSecond(cleanedTab: string[][]): void {
+    this.reducedTabOne = cleanedTab.map(line => line[0]);
+    this.reducedTabTwo = cleanedTab.map(line => parseInt(line[1],10));
   }
 
   getCalcString(): string[][]{
@@ -38,4 +38,10 @@ export class ParsingService {
   getReduceTableTwo(): number[]{
     return this.reducedTabTwo;
   }
+
+  exercice2ReturnProduct(): string {
+    this.removeFirst();
+    return this.getSecondStringAndRemoveFirst();
+  }
+
 }

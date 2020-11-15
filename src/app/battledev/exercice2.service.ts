@@ -17,8 +17,14 @@ export class Exercice2Service {
 
   getResult(input: string[]): number
   {
+    this.parsingService.inputString = input;
+    this.parsingService.removeFirst();
+    this.key = this.parsingService.getSecondStringAndRemoveFirst();
+    this.parsingService.transformInDoubleTab();
+    const cleanedTab = this.cleanTabByKey();
+    this.parsingService.transformInTwoTablesAndConvertSecond(cleanedTab);
 
-    return 0;
+    return this.getLowerPrice(this.parsingService.getReduceTableTwo());
   }
 
   cleanTabByKey(): string[][] {
