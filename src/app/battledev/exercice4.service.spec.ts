@@ -94,4 +94,45 @@ describe('Exercice4Service', () => {
 
     expect(price).toEqual(expectedPrice);
   });
+
+  it('should return total rounded amount', () => {
+    const amountByTables = [
+      259,
+      388.5,
+      266.4,
+      177.6
+    ];
+
+    const expectedAmount = 1092;
+
+    // Act
+    const result: number = exercice4Service.calculGeneralAmount(amountByTables);
+
+    // Assert
+    expect(result).toEqual(expectedAmount);
+  });
+
+  it('should getResult return good result INTEGRATION TEST', () => {
+    // Arrange
+    const input = [
+      '37',
+      '7',
+      '3',
+      '15',
+      '14',
+      '5',
+      '5',
+      '14',
+      '3'
+    ];
+    const expectedAmount = 1669;
+    const parsingServiceIntegration = new ParsingService();
+    const exercice4Integration = new Exercice4Service(parsingServiceIntegration);
+
+    // Act
+    const result = exercice4Integration.getResult(input);
+
+    // Assert
+    expect(result).toEqual(expectedAmount);
+  });
 });
