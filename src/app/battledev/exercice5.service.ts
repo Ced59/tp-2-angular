@@ -14,30 +14,40 @@ export class Exercice5Service {
   }
 
   isDivBy4(year: number): boolean {
-    return false;
+    return year % 4 === 0;
   }
 
   isDivBy400(year: number): boolean {
-    return false;
+    return year % 400 === 0;
   }
 
   isDivBy100(year: number): boolean {
-    return false;
+    return year % 100 === 0;
   }
 
-  isDivBy100not100(year: number): boolean {
-    return false;
+  isDivBy4not100(year: number): boolean {
+    return this.isDivBy4(year) && !this.isDivBy100(year);
   }
 
   isBissextile(year: number): boolean {
-    return false;
+    if (this.isDivBy4not100(year))
+    {
+      return true;
+    }
+    else { return this.isDivBy400(year); }
   }
 
-  getSingleResult(bissextile: boolean): string {
-    return '';
+  getSingleResult(year: number): string {
+    if (this.isBissextile(year))
+    {
+      return 'BISSEXTILE';
+    }
+    else {
+      return 'NON BISSEXTILE';
+    }
   }
 
   getTabResult(input: number[]): string[] {
-    return [];
+    return input.map(line => this.getSingleResult(line));
   }
 }

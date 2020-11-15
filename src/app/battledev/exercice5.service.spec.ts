@@ -73,7 +73,7 @@ describe('Exercice5Service', () => {
     const year = 1680;
     const expectedValue = true;
 
-    const result = exercice5Service.isDivBy100not100(year);
+    const result = exercice5Service.isDivBy4not100(year);
 
     expect(result).toEqual(expectedValue);
   });
@@ -82,7 +82,7 @@ describe('Exercice5Service', () => {
     const year = 1681;
     const expectedValue = false;
 
-    const result = exercice5Service.isDivBy100not100(year);
+    const result = exercice5Service.isDivBy4not100(year);
 
     expect(result).toEqual(expectedValue);
   });
@@ -133,19 +133,19 @@ describe('Exercice5Service', () => {
   });
 
   it('should return BISSEXTILE', () => {
-    const bissextile = true;
+    const year = 2012;
     const expectedValue = 'BISSEXTILE';
 
-    const result = exercice5Service.getSingleResult(bissextile);
+    const result = exercice5Service.getSingleResult(year);
 
     expect(result).toEqual(expectedValue);
   });
 
   it('should return NON BISSEXTILE', () => {
-    const bissextile = false;
+    const year = 2015;
     const expectedValue = 'NON BISSEXTILE';
 
-    const result = exercice5Service.getSingleResult(bissextile);
+    const result = exercice5Service.getSingleResult(year);
 
     expect(result).toEqual(expectedValue);
   });
