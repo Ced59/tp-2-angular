@@ -1,8 +1,13 @@
+stages:
+  - init
+  - build
+  - test
+
 default:
   image: trion/ng-cli-karma
 
 init_depedences:
-  stage: .pre
+  stage: init
   artifacts:
     paths:
       - node_modules/
