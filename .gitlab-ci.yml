@@ -3,3 +3,5 @@ testing_front:
   stage: build
   script:
     - npm ci
+    - npm run build:prod
+    - npm run test:ci
