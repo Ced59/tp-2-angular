@@ -1,0 +1,30 @@
+stages:
+  - init
+  - build
+  - test
+
+default:
+  image: trion/ng-cli-karma
+
+init_depedences:
+  stage: init
+  artifacts:
+    paths:
+      - node_modules/
+  script:
+    - npm ci
+
+build_front:
+  stage: build
+  script:
+    - npm run build:prod
+
+testing_front:
+  stage: test
+  script:
+    - npm run test:ci
+
+deploy_front:
+  stage: deploy
+  script:
+    - ./node_modules/.bin/surge --project dist/gaming-app/ --domain gaming-app-groupe2.surge.sh

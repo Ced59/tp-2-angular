@@ -19,7 +19,7 @@ export class Exercice2Service {
   {
     this.parsingService.inputString = input;
     this.parsingService.removeFirst();
-    this.key = this.parsingService.getSecondStringAndRemoveFirst();
+    this.key = this.parsingService.getFirstEntryStringAndRemoveHer();
     this.parsingService.transformInDoubleTab();
     const cleanedTab = this.cleanTabByKey();
     this.parsingService.transformInTwoTablesAndConvertSecond(cleanedTab);

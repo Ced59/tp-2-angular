@@ -77,7 +77,7 @@ describe('When formatting inputs', () => {
     ];
 
     // Act
-    const secondString = parsingService.getSecondStringAndRemoveFirst();
+    const secondString = parsingService.getFirstEntryStringAndRemoveHer();
 
     // Assert
     expect(secondString).toEqual(expectedString);
@@ -106,6 +106,24 @@ describe('When formatting inputs', () => {
     // Assert
     expect(parsingService.calcString).toEqual(expectedInputString);
 
+  });
+
+  it('should transform multi input in double tab', () => {
+    parsingService.inputString = [
+      '5 9 7',
+      '10 17 7'
+    ];
+
+    const expectedInputString = [
+      ['5', '9', '7'],
+      ['10', '17', '7']
+    ];
+
+    // Act
+    parsingService.transformInDoubleTab();
+
+    // Assert
+    expect(parsingService.calcString).toEqual(expectedInputString);
   });
 
   it('should convert second tab in number', () => {

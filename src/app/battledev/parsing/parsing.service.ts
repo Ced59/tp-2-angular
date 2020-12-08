@@ -16,7 +16,7 @@ export class ParsingService {
       this.inputString.shift();
   }
 
-  getSecondStringAndRemoveFirst(): string {
+  getFirstEntryStringAndRemoveHer(): string {
     const result = this.inputString[0];
     this.removeFirst();
     return result;
@@ -41,7 +41,7 @@ export class ParsingService {
 
   exercice2ReturnProduct(): string {
     this.removeFirst();
-    return this.getSecondStringAndRemoveFirst();
+    return this.getFirstEntryStringAndRemoveHer();
   }
 
 }
