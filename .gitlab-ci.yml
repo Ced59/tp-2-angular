@@ -2,6 +2,7 @@ stages:
   - init
   - build
   - test
+  - deploy
 
 default:
   image: trion/ng-cli-karma
