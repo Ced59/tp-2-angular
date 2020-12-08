@@ -2,4 +2,4 @@ testing_front:
   image: trion/ng-cli-karma
   stage: build
   script:
-    - npm install
+    - npm ci
