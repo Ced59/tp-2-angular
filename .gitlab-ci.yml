@@ -3,6 +3,9 @@ default:
 
 init_depedences:
   stage: .pre
+  artifacts:
+    paths:
+      - node_modules/
   script:
     - npm ci
 
