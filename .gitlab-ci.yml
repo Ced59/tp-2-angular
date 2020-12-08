@@ -1,7 +1,17 @@
-testing_front:
+default:
   image: trion/ng-cli-karma
-  stage: build
+
+init_depedences:
+  stage: .pre
   script:
     - npm ci
+
+build_front:
+  stage: build
+  script:
     - npm run build:prod
+
+testing_front:
+  stage: test
+  script:
     - npm run test:ci
